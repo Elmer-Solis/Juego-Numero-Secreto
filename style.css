@@ -1,0 +1,190 @@
+/* Reset de estilos y configuración del modelo de caja */
+* {
+    box-sizing: border-box;
+    /* Evita problemas con el modelo de caja */
+    margin: 0;
+    /* Reinicia el margen a 0 para todos los elementos */
+    padding: 0;
+    /* Reinicia el relleno a 0 para todos los elementos */
+    color: white;
+    /* Establece el color de texto predeterminado para todos los elementos */
+}
+
+/* Estilos para el cuerpo de la página */
+body {
+    background: linear-gradient(#1354A5 0%, #041832 33.33%, #041832 66.67%, #01080E 100%);
+    /* Fondo con gradiente lineal */
+    height: 100vh;
+    /* Altura del cuerpo igual al 100% de la ventana visible */
+    display: flex;
+    /* Utiliza el modelo de caja flexible */
+    align-items: center;
+    /* Centra verticalmente el contenido */
+    justify-content: center;
+    /* Centra horizontalmente el contenido */
+}
+
+
+
+/* Pseudo-elemento ::before para agregar una imagen de fondo al cuerpo */
+body::before {
+    background-image: url("img/code.png");
+    /* Imagen de fondo */
+    background-repeat: no-repeat;
+    /* No se repite la imagen de fondo */
+    background-position: right;
+    /* Posición de la imagen en el lado derecho */
+    content: "";
+    /* Contenido vacío */
+    display: block;
+    /* Elemento de bloque para ocupar todo el cuerpo */
+    position: absolute;
+    /* Posicionamiento absoluto con respecto al cuerpo */
+    width: 100%;
+    /* Ancho del pseudo-elemento igual al 100% del cuerpo */
+    height: 100%;
+    /* Altura del pseudo-elemento igual al 100% del cuerpo */
+    opacity: 0.4;
+    /* Opacidad del pseudo-elemento */
+}
+
+/* Estilos para el contenedor principal */
+.container {
+    width: 1200px;
+    /* Ancho fijo del contenedor principal */
+    height: 600px;
+    /* Altura fija del contenedor principal */
+    display: flex;
+    /* Utiliza el modelo de caja flexible */
+    align-items: center;
+    /* Centra verticalmente el contenido */
+    justify-content: space-between;
+    /* Espaciado uniforme entre los elementos secundarios */
+    border-radius: 24px;
+    /* Borde redondeado */
+    border: 1px solid #1875E8;
+    /* Borde sólido */
+    box-shadow: 4px 4px 20px 0px rgba(1, 8, 14, 0.15);
+    /* Sombra del contenedor */
+    background-image: url("img/Ruido.png");
+    /* Fondo del contenedor */
+    background-size: 100% 100%;
+    /* Tamaño completo del fondo */
+    position: relative;
+    /* Posicionamiento relativo para alinear correctamente el pseudo-elemento ::before */
+}
+
+/* Estilos para el contenido dentro del contenedor */
+.container__contenido {
+    display: flex;
+    /* Utiliza el modelo de caja flexible */
+    align-items: center;
+    /* Centra verticalmente el contenido */
+    position: absolute;
+    /* Posicionamiento absoluto con respecto al contenedor */
+    bottom: 0;
+    /* Alinea el contenido en la parte inferior del contenedor */
+}
+
+/* Estilos para la sección de información dentro del contenedor */
+.container__informaciones {
+    flex: 1;
+    /* Toma el espacio disponible restante */
+    padding: 3rem;
+    /* Relleno interno */
+}
+
+/* Estilos para el botón dentro del contenedor */
+.container__boton {
+    border-radius: 16px;
+    /* Borde redondeado */
+    background: #1875E8;
+    /* Color de fondo */
+    padding: 16px 24px;
+    /* Relleno interno */
+    width: 100%;
+    /* Ancho del 100% */
+    font-size: 24px;
+    /* Tamaño de fuente */
+    font-weight: 700;
+    /* Grosor de la fuente */
+    border: none;
+    /* Sin borde */
+    margin-top: 2rem;
+    /* Margen superior */
+}
+
+/* Estilos para el estado deshabilitado del botón dentro del contenedor */
+.container__boton:disabled {
+    background: #898989;
+    /* Color de fondo para el estado deshabilitado */
+}
+
+/* Estilos para el texto dentro del contenedor */
+.container__texto {
+    margin: 16px 0 16px 0;
+    /* Márgenes superior e inferior */
+}
+
+/* Estilos específicos para el texto con color azul */
+.container__texto-azul {
+    color: #1875E8;
+    /* Color de texto azul */
+}
+
+/* Estilos para el input dentro del contenedor */
+.container__input {
+    width: 100%;
+    /* Ancho del 100% */
+    height: 72px;
+    /* Altura fija del input */
+    border-radius: 16px;
+    /* Borde redondeado */
+    background-color: #FFF;
+    /* Color de fondo */
+    border: none;
+    /* Sin borde */
+    color: #1875E8;
+    /* Color de texto */
+    padding: 2rem;
+    /* Relleno interno */
+    font-size: 24px;
+    /* Tamaño de fuente */
+    font-weight: 700;
+    /* Grosor de la fuente */
+    font-family: 'Inter', sans-serif;
+    /* Tipo de fuente */
+}
+
+/* Estilos para la sección de botones dentro del contenedor */
+.container__botones {
+    display: flex;
+    /* Utiliza el modelo de caja flexible */
+    gap: 2em;
+    /* Espacio entre elementos secundarios */
+}
+
+/* Estilos para el encabezado h1 */
+h1 {
+    font-family: 'Chakra Petch', sans-serif;
+    /* Tipo de fuente */
+    font-size: 72px;
+    /* Tamaño de fuente */
+    padding-bottom: 3rem;
+    /* Márgenes inferiores */
+}
+
+/* Estilos generales para párrafos y botones */
+p,
+button {
+    font-family: 'Inter', sans-serif;
+    /* Tipo de fuente */
+}
+
+/* Estilos para el párrafo con tamaño de fuente específico */
+.texto__parrafo {
+    font-size: 32px;
+    /* Tamaño de fuente */
+    font-weight: 400;
+    /* Grosor de la fuente */
+}
