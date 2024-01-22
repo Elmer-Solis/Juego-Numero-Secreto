@@ -1,12 +1,23 @@
 // Variables
 let intentos = 0;
+let listaNumerosSorteados = [];
 
 const setHtml = (elemento, texto) => {
     const title = document.querySelector(elemento);
     title.innerHTML = texto;
 };
 
-const numeroAleatorio = () => Math.round(Math.random() * (10 - 1) + 1);
+const numeroAleatorio = () => {
+    let numeroGenerado = Math.round(Math.random() * (10 - 1) + 1);
+    console.log(numeroGenerado);
+    console.log(listaNumerosSorteados);
+    if (listaNumerosSorteados.includes(numeroGenerado)) {
+        return numeroAleatorio();
+    } else {
+        listaNumerosSorteados.push(numeroGenerado);
+        return numeroGenerado;
+    }
+}
 
 const intentoUsuario = () => {
     const input = Number(document.querySelector('input').value);
@@ -49,7 +60,6 @@ const estructuraInicial = () => {
 
 let numeroSecreto = numeroAleatorio();
 console.log(numeroSecreto);
-
 
 estructuraInicial();
 
