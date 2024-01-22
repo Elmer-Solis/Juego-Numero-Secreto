@@ -1,6 +1,8 @@
 // Variables
 let intentos = 0;
 let listaNumerosSorteados = [];
+let numeroMaximo = 10;
+let numeroSecreto = 0;
 
 const setHtml = (elemento, texto) => {
     const title = document.querySelector(elemento);
@@ -8,14 +10,20 @@ const setHtml = (elemento, texto) => {
 };
 
 const numeroAleatorio = () => {
-    let numeroGenerado = Math.round(Math.random() * (10 - 1) + 1);
+    let numeroGenerado = Math.round(Math.random() * (numeroMaximo - 1) + 1);
     console.log(numeroGenerado);
     console.log(listaNumerosSorteados);
-    if (listaNumerosSorteados.includes(numeroGenerado)) {
-        return numeroAleatorio();
+
+    if (listaNumerosSorteados.length === numeroMaximo) {
+        setHtml('p', 'Ya se sortearon todos los numeros')
     } else {
-        listaNumerosSorteados.push(numeroGenerado);
-        return numeroGenerado;
+        // si el numero generado esta incluido
+        if (listaNumerosSorteados.includes(numeroGenerado)) {
+            return numeroAleatorio();
+        } else {
+            listaNumerosSorteados.push(numeroGenerado);
+            return numeroGenerado;
+        }
     }
 }
 
@@ -53,13 +61,11 @@ const limpiarCaja = () => {
 
 const estructuraInicial = () => {
     setHtml('h1', 'Juego del número secreto');
-    setHtml('p', 'Ingresa un número del 1 al 10');
+    setHtml('p', `Ingresa un número del 1 al ${numeroMaximo}`);
     numeroSecreto = numeroAleatorio();
     intentos = 0;
 }
 
-let numeroSecreto = numeroAleatorio();
-console.log(numeroSecreto);
 
 estructuraInicial();
 
