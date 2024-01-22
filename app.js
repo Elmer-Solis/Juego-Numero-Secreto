@@ -4,10 +4,15 @@ let listaNumerosSorteados = [];
 let numeroMaximo = 10;
 let numeroSecreto = 0;
 
+// Funciones
 const setHtml = (elemento, texto) => {
     const title = document.querySelector(elemento);
     title.innerHTML = texto;
 };
+
+const limpiarCaja = () => {
+    document.querySelector('input').value = '';
+}
 
 const numeroAleatorio = () => {
     let numeroGenerado = Math.round(Math.random() * (numeroMaximo - 1) + 1);
@@ -47,18 +52,6 @@ const intentoUsuario = () => {
     }
 };
 
-const reiniciarJuego = () => {
-    limpiarCaja();
-    estructuraInicial();
-
-    document.querySelector('#reiniciar').setAttribute('disabled', 'true');
-
-}
-
-const limpiarCaja = () => {
-    document.querySelector('input').value = '';
-}
-
 const estructuraInicial = () => {
     setHtml('h1', 'Juego del número secreto');
     setHtml('p', `Ingresa un número del 1 al ${numeroMaximo}`);
@@ -66,9 +59,15 @@ const estructuraInicial = () => {
     intentos = 0;
 }
 
+const reiniciarJuego = () => {
+    limpiarCaja();
+    estructuraInicial();
 
+    document.querySelector('#reiniciar').setAttribute('disabled', 'true');
+}
+
+// Llamada a funciones
 estructuraInicial();
-
 
 
 
